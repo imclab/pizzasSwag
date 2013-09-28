@@ -80,3 +80,43 @@ $(document).on('click', '#roadPics', function (e){
     $('img', '#picsModal').attr('src', e.target.src);
     $('#picsModal').modal('show');
 });
+
+
+
+
+// CHAT + PHOTO
+var roomid = 'pizzaswag';
+var connection = new DataConnection();
+
+// on data connection opens
+connection.onopen = function(e) {
+    console.log('open connection txt');
+};
+
+// on data connection error
+connection.onerror = function(e) {
+    console.debug('Error in data connection. Target user id', e.userid, 'Error', e);
+};
+
+connection.onclose = function(e) {
+    console.debug('Data connection closed. Target user id', e.userid, 'Error', e);
+};
+
+// using firebase for signaling
+connection.firebase = 'signaling';
+
+// check pre-created data connections
+connection.check(roomid);
+
+$(document).ready(function() {
+    setTimeout(function() {
+        console.log('setup');
+        connection.setup(roomid);
+    }, 1000);
+});
+
+
+connection.onmessage = function(message, userid) {
+    console.log(userid + '   | msg:   ' + message);
+}
+

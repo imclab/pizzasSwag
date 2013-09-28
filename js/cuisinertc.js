@@ -1,6 +1,5 @@
 //$(document).ready(function(){
-
-
+    // VIDEO
     var config = {
         openSocket: function (config) {
             var SIGNALING_SERVER = 'https://www.webrtc-experiment.com:8553/',
@@ -30,9 +29,6 @@
             socket.on('message', config.onmessage);
         },
         onRemoteStream: function (htmlElement) {
-            //videosContainer.insertBefore(htmlElement, videosContainer.firstChild);
-            //htmlElement.play();
-            //rotateInCircle(htmlElement);
         },
         onRoomFound: function (room) {
             var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
@@ -83,7 +79,6 @@
                 callback && callback();
 
                 htmlElement.setAttribute('muted', true);
-                rotateInCircle(htmlElement);
             },
             onerror: function () {
                 if (option === 'Only Audio') alert('unable to get access to your microphone');
@@ -117,11 +112,8 @@
         }
     }
 
-    function rotateInCircle(video) {
-        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
-        setTimeout(function () {
-            video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
-        }, 1000);
-    }
+
+
+
 
 //});
