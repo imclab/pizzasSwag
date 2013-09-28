@@ -1,5 +1,9 @@
+@font-face {
+    font-family: 'speedyswag';
+    src: url('../fonts/font.ttf');
+}
 body {
-	background: url(../img/bg.jpg);
+	background: url(../img/bg.jpg) no-repeat fixed;
 }
 .container {
 	padding: 20px;
@@ -21,17 +25,18 @@ body {
 #orderWindow p img {
 	width: 200px;
 }
-#orderConfirmation, #kitchenWindow, #lstChecks {
+#orderConfirmation, #kitchenWindow, #lstChecks, #waitingOrderWindow h1 {
 	margin-top: 20px;
 	padding: 15px;
 	background: #eee;
 	border: 2px solid #ddd;
-	border-radius: 5px;
-	box-shadow: 0px 2px 20px 5px #111
+	border-radius: 8px;
+	box-shadow: 1px 2px 15px 2px #111;
 }
 #orderWindow button {
 	margin: 10px;
 	font-size: 1.8em;
+	font-weight: bold;
 }
 #orderWindow strong {
 	margin: 20px 20px 0px 0px;
@@ -48,10 +53,13 @@ video {
 	padding: 22px;
 	background: #f33;
 	border-radius: 16px;
-	cursor: pointer;
 	width: 80%;
+	font-weight: bold;
 }
-#lstChecks label:hover {
+#lstChecks label.cuisine {
+	cursor: pointer;
+}
+#lstChecks .cuisine:hover {
 	opacity: 0.6;
 }
 
@@ -61,20 +69,54 @@ video {
 input[type=checkbox] {
 	visibility: hidden;
 }
-#orderWindow h1 {
+#orderWindow h1, #waitingOrderWindow h1 {
+	font-family: 'speedyswag';
 	margin-top: 10px;
+	margin-bottom: 25px;
 }
 
 #logo {
-	position: absolute;
+	font-family: 'speedyswag';
+	position: fixed;
 	bottom: 2px;
 	left: 15px;
 	font-size: 2.5em;
-	color: #000;
-	text-shadow: 2px 2px 1px #fff;
+	color: #fff;
+	text-shadow: 2px 2px 2px #000;
 	vertical-align: top;
 }
 #logo:before {
 	content: url(../img/logo.png);
 	padding-right: 10px;
+}
+.glyphicon {
+	margin-right: 5px;
+}
+
+
+.one {
+	margin-left: 4px;
+    opacity: 0;
+    -webkit-animation: dot 1s linear 0.0s infinite;
+    -moz-animation: dot 1s linear 0.0s infinite;
+}
+.two {
+    opacity: 0;
+    -webkit-animation: dot 1s linear 0.1s infinite;
+    -moz-animation: dot 1s linear 0.1s infinite;
+}
+.three {
+    opacity: 0;
+    -webkit-animation: dot 1s linear 0.2s infinite;
+    -moz-animation: dot 1s linear 0.2s infinite;
+}
+@-webkit-keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
 }

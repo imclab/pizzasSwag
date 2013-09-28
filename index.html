@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.png">
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/normalize.css">
@@ -25,25 +26,36 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <!-- WAITING ORDER WINDOW-->
+        <div id="waitingOrderWindow" class="fullscreen hide">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 center">
+                        <h1 class="center">Waiting for order<span class="one">.</span><span class="two">.</span><span class="three">.</span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- FAKE ORDER WINDOW-->
         <div id="orderWindow" class="fullscreen">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6" style="height:100%;">
                         <div id="kitchenWindow">
-                            <h1>Kitchen Live !</h1>
+                            <h1 class="center">Kitchen Live !</h1>
                             <video id="kitchen" src="maman">Your browser does not support the video tag.</video>
                         </div>
                     </div>
                     <div class="col-lg-6 center">
                         <div id="orderConfirmation">
                             <h1>Order Confirmation</h1>
-                            <p><strong>Pizza avec des gros champignons</strong><br>
+                            <p><strong><span class="glyphicon glyphicon-cutlery"></span> Pizza avec des gros champignons</strong><br>
                             <img src="img/pizza1.jpg" class="img-thumbnail"/></p>
-                            <p><strong>Pizza avec des cheeseburgers dans la pate</strong><br><small><i>100% pur gras</i></small><br>
+                            <p><strong><span class="glyphicon glyphicon-cutlery"></span> Pizza avec des cheeseburgers dans la pate</strong><br><small><i>100% pur gras</i></small><br>
                             <img src="img/pizza2.jpg" class="img-thumbnail"/></p>
-                            <p><strong>Du bon coca en bouteille de 1945</strong><br><img src="img/coca.jpg" class="img-thumbnail"/></p>
-                            <p><strong id="prixTotal"><u>Prix total : 30000 dollars</u></strong><button class="btn btn-primary btn-lg" onclick="goToKitchenCam()" >Commander !</button></p>
+                            <p><strong><span class="glyphicon glyphicon-cutlery"></span> Du bon coca en bouteille de 1945</strong><br><img src="img/coca.jpg" class="img-thumbnail"/></p>
+                            <p><strong id="prixTotal"><u>Prix total : 30,000.00 $</u></strong><button class="btn btn-primary btn-lg" onclick="goToKitchenCam()" >Commander !</button></p>
                         </div>
                         <div id="lstChecks" class="hide">
                             <p><label><input type="checkbox" value="0" /> Order Placed</label></p>

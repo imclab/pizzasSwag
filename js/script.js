@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('input', '#lstChecks').click(function() {
+	$('input', '.cuisine').click(function() {
 		$(this).parent().toggleClass('checked');
 		if($(this).hasClass('qc')) {
 			goToVroumVroum();
