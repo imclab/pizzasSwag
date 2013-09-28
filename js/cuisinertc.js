@@ -1,6 +1,5 @@
 //$(document).ready(function(){
-
-
+    // VIDEO
     var config = {
         openSocket: function (config) {
             var SIGNALING_SERVER = 'https://www.webrtc-experiment.com:8553/',
@@ -30,9 +29,6 @@
             socket.on('message', config.onmessage);
         },
         onRemoteStream: function (htmlElement) {
-            //videosContainer.insertBefore(htmlElement, videosContainer.firstChild);
-            //htmlElement.play();
-            //rotateInCircle(htmlElement);
         },
         onRoomFound: function (room) {
             var alreadyExist = document.querySelector('button[data-broadcaster="' + room.broadcaster + '"]');
@@ -83,7 +79,6 @@
                 callback && callback();
 
                 htmlElement.setAttribute('muted', true);
-                rotateInCircle(htmlElement);
             },
             onerror: function () {
                 if (option === 'Only Audio') alert('unable to get access to your microphone');
@@ -117,11 +112,51 @@
         }
     }
 
-    function rotateInCircle(video) {
-        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
-        setTimeout(function () {
-            video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
+
+
+
+
+    // CHAT + PHOTO
+    var roomid = 'pizzaswag';
+    var connection = new DataConnection();
+
+    // on data connection opens
+    connection.onopen = function(e) {
+        console.log('open connection txt');
+    };
+
+    // on data connection error
+    connection.onerror = function(e) {
+        console.debug('Error in data connection. Target user id', e.userid, 'Error', e);
+    };
+
+    connection.onclose = function(e) {
+        console.debug('Data connection closed. Target user id', e.userid, 'Error', e);
+    };
+
+    // using firebase for signaling
+    connection.firebase = 'signaling';
+
+    // check pre-created data connections
+    connection.check(roomid);
+
+    $(document).ready(function() {
+        setTimeout(function() {
+            console.log('setup');
+            connection.setup(roomid);
         }, 1000);
+    });
+
+    var i = 0;
+    setInterval(function() {
+        i++;
+        console.log(i);    
+        connection.send(i);
+    }, 2000);
+
+    connection.onmessage = function(message, userid) {
+        console.log(userid + '   | msg:   ' + message);
     }
+
 
 //});
