@@ -112,7 +112,7 @@ $(document).ready(function() {
     setTimeout(function() {
         console.log('setup');
         connection.setup(roomid);
-    }, 1000);
+    }, 2000);
 });
 
 
