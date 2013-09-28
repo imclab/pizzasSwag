@@ -55,6 +55,7 @@ function goToVroumVroum() {
 
             // Put video listeners into place
             if(navigator.getUserMedia) { // Standard
+                console.log('here');
                 navigator.getUserMedia(videoObj, function(stream) {
                     videoChibre.src = stream;
                     videoChibre.play();
