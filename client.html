@@ -16,8 +16,11 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://www.webrtc-experiment.com/socket.io.js"></script>
+        <script src="https://www.webrtc-experiment.com/RTCPeerConnection-v1.5.js"></script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="js/PeerConnection.js"> </script>
+        <script src="js/broadcast.js"> </script>
     </head>
     <body>
 
@@ -34,7 +37,7 @@
                     <div class="col-lg-6" style="height:100%;">
                         <div id="kitchenWindow">
                             <h1 class="center">Kitchen Live !</h1>
-                            <div id="kitchen"></div>
+                            <div id="videos-container"></div>
                         </div>
                     </div>
                     <div class="col-lg-6 center">
@@ -110,5 +113,6 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/clientrtc.js"></script>
     </body>
 </html>
