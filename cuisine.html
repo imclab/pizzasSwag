@@ -51,10 +51,21 @@
                     </div>
                     <div class="col-lg-6 center">
                         <div id="lstChecks">
-                            <p><label><input type="checkbox" value="0" /> Order Placed</label></p>
-                            <p><label><input type="checkbox" value="0" /> Preparation</label></p>
-                            <p><label><input type="checkbox" value="0" /> Bake</label></p>
-                            <p><label><input type="checkbox" value="0" class="qc"/> Quality Control</label></p>
+                            <p><label class="cuisine checked"><input type="checkbox" value="0" />Order Placed</label></p>
+                            <p><label class="cuisine"><input type="checkbox" value="0" />Preparation</label></p>
+                            <p><label class="cuisine"><input type="checkbox" value="0" />Bake</label></p>
+                            <p><label class="cuisine"><input type="checkbox" value="0" class="qc"/>Quality Control</label></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-offset-6">
+                        <div id="drivers" class="hide center">
+                            <h1>Select the driver !</h1>
+                            <img src="img/driver1.png" class="img-thumbnail"/>
+                            <img id="chewbie" src="img/driver2.jpg" class="img-thumbnail"/>
+                            <img src="img/driver3.jpg" class="img-thumbnail"/>
+                            <img src="img/driver4.jpg" class="img-thumbnail"/>
                         </div>
                     </div>
                 </div>
@@ -64,8 +75,15 @@
         <!-- VROOM VROOM WINDOW-->
         <div id="vroomVroomWindow" class="fullscreen hide">
             <div class="container">
-                <div class="row">
-                   
+                <div id="livreur" class="center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Deliver here !</h1>
+                            <p><img src="img/mapslivreur.png" class="img-thumbnail"/></p>
+                            <p><button id="start-broadcasting" class="setup btn btn-primary btn-lg">
+                                <img src="img/customer.jpg" style="height:80px;border-radius:40px;margin-right:16px"/>Call Customer</button></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

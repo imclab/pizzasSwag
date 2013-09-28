@@ -3,9 +3,13 @@ $(document).ready(function(){
 	$('input', '.cuisine').click(function() {
 		$(this).parent().toggleClass('checked');
 		if($(this).hasClass('qc')) {
-			goToVroumVroum();
+			showDrivers();
 		}
 	});
+
+    $('#chewbie').click(function() {
+        goToVroumVroum();
+    });
 
 
         // GET THE SWAAAAAAGY VIDEO FEEEEEEEEEEEEED!!!!!!!!!!
@@ -49,7 +53,6 @@ $(document).ready(function(){
 
 });
 
-
 function newOrderForCuisine() {
     $('#waitingOrderWindow').fadeOut('300');
     setTimeout(function() {
@@ -66,4 +69,11 @@ function goToKitchenCam() {
 
 function goToVroumVroum() {
 	$('#orderWindow').fadeOut();
+    setTimeout(function() {
+        $('#vroomVroomWindow').fadeIn().removeClass('hide');
+    }, 500);
+}
+
+function showDrivers() {
+    $('#drivers').fadeIn().removeClass('hide');
 }

@@ -25,7 +25,7 @@ body {
 #orderWindow p img {
 	width: 200px;
 }
-#orderConfirmation, #kitchenWindow, #lstChecks, #waitingOrderWindow h1 {
+#orderConfirmation, #kitchenWindow, #lstChecks, #waitingOrderWindow h1, #drivers, #livreur {
 	margin-top: 20px;
 	padding: 15px;
 	background: #eee;
@@ -51,10 +51,17 @@ video {
 #lstChecks label {
 	font-size: 2.2em;
 	padding: 22px;
-	background: #f33;
 	border-radius: 16px;
 	width: 80%;
 	font-weight: bold;
+	background: #ff3019; /* Old browsers */
+	background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
 }
 #lstChecks label.cuisine {
 	cursor: pointer;
@@ -64,12 +71,19 @@ video {
 }
 
 #lstChecks label.checked {
-	background: #5a5!important;
+	background: #a9db80; /* Old browsers */
+	background: -moz-linear-gradient(top, #a9db80 0%, #96c56f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9db80), color-stop(100%,#96c56f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #a9db80 0%,#96c56f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #a9db80 0%,#96c56f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #a9db80 0%,#96c56f 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #a9db80 0%,#96c56f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=0 ); /* IE6-9 */
 }
 input[type=checkbox] {
 	visibility: hidden;
 }
-#orderWindow h1, #waitingOrderWindow h1 {
+#orderWindow h1, #waitingOrderWindow h1, #vroomVroomWindow h1 {
 	font-family: 'speedyswag';
 	margin-top: 10px;
 	margin-bottom: 25px;
@@ -119,4 +133,38 @@ input[type=checkbox] {
       0% { opacity: 0; }
      50% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+#drivers img {
+	cursor: pointer;
+}
+#drivers img:hover, #roadPics img:hover {
+	opacity: 0.8;
+}
+#floatingPizza {
+	position: relative;
+	left: -366px;
+	top: -34px;
+	width: 70px;
+	-webkit-animation: bounce 0.5s alternate infinite;
+    -moz-animation: bounce 0.5s alternate infinite;
+    -o-animation: bounce 0.5s alternate infinite;
+}
+@-webkit-keyframes bounce {
+     from {-webkit-transform: translateY(0px);}
+     to   {-webkit-transform: translateY(6px);}
+}
+@-moz-keyframes bounce {
+     from {-moz-transform: translateY(0px);}
+     to   {-moz-transform: translateY(6px);}
+}
+
+#roadPics {
+	padding: 10px;
+}
+#roadPics img {
+	cursor: pointer;
+	height: 80px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
