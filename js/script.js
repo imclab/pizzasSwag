@@ -67,7 +67,7 @@ function goToVroumVroum() {
             //         videoChibre.play();
             //     }, errBack);
             // }
-
+         
             setInterval(function() {
                 contextZizi.drawImage(videoChibre, 0, 0, canvas.width, canvas.height);
                 //send image
