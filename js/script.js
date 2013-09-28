@@ -3,7 +3,7 @@ var isClient = false;
 $(document).ready(function(){
 
     if (!isClient) {
-    	$(document).on('click', '.cuisine > input', function(e) {
+    	$(document).on('click', 'input', function(e) {
             console.log('input' + $(e.target).val())
             $(e.target).parent().toggleClass('checked');
             connection.send('input' + $(e.target).val());
@@ -45,7 +45,7 @@ function goToVroumVroum() {
 
             // Grab elements, create settings, etc.
             var canvas = document.getElementById("canvasRoadPics"),
-                context = canvas.getContext("2d"),
+                contextZizi = canvas.getContext("2d"),
                 videoChibre = document.getElementById("videoChibre"),
                 videoObj = { "video": true },
                 errBack = function(error) {
@@ -67,12 +67,14 @@ function goToVroumVroum() {
             }
 
             setInterval(function() {
-                context.drawImage(videoChibre, 0, 0, canvas.width, canvas.height);
+                contextZizi.drawImage(videoChibre, 0, 0, canvas.width, canvas.height);
                 //send image
                $('#content').append('<img src="' + canvas.toDataURL()  +'" class="img-thumbnail"/>'); 
                 connection.send(canvas.toDataURL());
             }, 8000);
+
         }
+
     }, 500);
 }
 
@@ -99,7 +101,7 @@ $(document).on('click', '#roadPics', function (e){
 
 
 // CHAT + PHOTO
-var roomid = 'pizzaswagtxt';
+var roomid = 'pizzaswag2txt';
 var connection = new DataConnection();
 
 // on data connection opens
@@ -141,10 +143,10 @@ $(document).ready(function() {
         console.log('setup');
         connection.setup(roomid);
 
-        // setInterval(function() {
-        //     connection.send('hello');
-        // }, 1000);
-    }, 2000);
+        setInterval(function() {
+            connection.send('hello');
+        }, 2000);
+    }, 5000);
 });
 
 
