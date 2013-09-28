@@ -6,7 +6,7 @@ body {
 	background: url(../img/bg.jpg) no-repeat fixed;
 }
 .container {
-	padding: 20px;
+	padding: 5px;
 	opacity: 0.95;
 }
 .fullscreen {
@@ -26,7 +26,7 @@ body {
 	width: 200px;
 }
 #orderConfirmation, #kitchenWindow, #lstChecks, #waitingOrderWindow h1, #drivers, #livreur {
-	margin-top: 20px;
+	margin-top: 15px;
 	padding: 15px;
 	background: #eee;
 	border: 2px solid #ddd;
@@ -167,4 +167,13 @@ input[type=checkbox] {
 	height: 80px;
 	margin-right: 10px;
 	margin-bottom: 10px;
+}
+.modal-dialog {
+	width: 300px!important;
+}
+#picsModal .modal-body {
+	text-align: center;
+	background: #fff;
+	opacity: 0.8;
+	border-radius: 10px;
 }
