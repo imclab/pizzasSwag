@@ -2,21 +2,23 @@ var isClient = false;
 
 $(document).ready(function(){
 
-    if (!isClient) {
     	$(document).on('click', 'input', function(e) {
-            console.log('input' + $(e.target).val())
-            $(e.target).parent().toggleClass('checked');
-            connection.send('input' + $(e.target).val());
-    		if($(e.target).hasClass('qc')) {
-    			showDrivers();
-    		}
+            if (!isClient) {
+                console.log('input' + $(e.target).val())
+                $(e.target).parent().toggleClass('checked');
+                connection.send('input' + $(e.target).val());
+        		if($(e.target).val() == 3) {
+        			showDrivers();
+        		}
+            }
 	   });
 
         $(document).on('click', '#chewbie', function() {
-            connection.send('vroumvroum');
-            goToVroumVroum();
+            if (!isClient) {
+                connection.send('vroumvroum');
+                goToVroumVroum();
+            }
         });
-    }
 
 });
 
