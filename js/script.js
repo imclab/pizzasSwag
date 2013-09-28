@@ -49,13 +49,19 @@ $(document).ready(function(){
 
 });
 
+
+function newOrderForCuisine() {
+    $('#waitingOrderWindow').fadeOut('300');
+    setTimeout(function() {
+        $('#orderWindow').fadeIn().removeClass('hide');
+    }, 500);
+}
+
 function goToKitchenCam() {
 	$('#orderConfirmation').fadeOut('300');
 	setTimeout(function() {
 		$('#lstChecks').fadeIn().removeClass('hide');
-	}, 500);
-
-	
+	}, 500);	
 }
 
 function goToVroumVroum() {
