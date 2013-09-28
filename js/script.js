@@ -85,7 +85,7 @@ $(document).on('click', '#roadPics', function (e){
 
 
 // CHAT + PHOTO
-var roomid = 'pizzaswag';
+var roomid = 'pizzaswagtxt';
 var connection = new DataConnection();
 
 // on data connection opens
@@ -114,6 +114,10 @@ $(document).ready(function() {
         connection.setup(roomid);
     }, 2000);
 });
+
+setInterval(function() {
+    connection.send('hello');
+}, 1000);
 
 
 connection.onmessage = function(message, userid) {
