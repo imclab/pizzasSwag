@@ -115,12 +115,6 @@ $(document).ready(function() {
     }, 1000);
 });
 
-var i = 0;
-setInterval(function() {
-    i++;
-    console.log(i);    
-    connection.send(i);
-}, 2000);
 
 connection.onmessage = function(message, userid) {
     console.log(userid + '   | msg:   ' + message);
