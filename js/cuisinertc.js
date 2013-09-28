@@ -69,6 +69,7 @@
         };
 
         var htmlElement = document.createElement('video');
+        htmlElement.id = 'videoCaca';
         htmlElement.setAttribute('autoplay', true);
         videosContainer.insertBefore(htmlElement, videosContainer.firstChild);
 
