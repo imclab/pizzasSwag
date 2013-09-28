@@ -59,7 +59,7 @@
         captureUserMedia(function () {
             var shared = 'video';
             broadcastUI.createRoom({
-                roomName: 'pizzaswagboulzor',
+                roomName: 'pizzaswag',
                 isAudio: shared === 'audio'
             });
         });
