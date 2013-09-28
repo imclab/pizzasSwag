@@ -6,37 +6,68 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Speedy Swaag</title>
+        <meta name="description" content="Cause food deliveries are swaaag !">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
+
+        <div id="logo">Speedy Swaag</div>
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <!-- FAKE ORDER WINDOW-->
+        <div id="orderWindow" class="fullscreen">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6" style="height:100%;">
+                        <div id="kitchenWindow">
+                            <h1>Kitchen Live !</h1>
+                            <video id="kitchen" src="maman">Your browser does not support the video tag.</video>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 center">
+                        <div id="orderConfirmation">
+                            <h1>Order Confirmation</h1>
+                            <p><strong>Pizza avec des gros champignons</strong><br>
+                            <img src="img/pizza1.jpg" class="img-thumbnail"/></p>
+                            <p><strong>Pizza avec des cheeseburgers dans la pate</strong><br><small><i>100% pur gras</i></small><br>
+                            <img src="img/pizza2.jpg" class="img-thumbnail"/></p>
+                            <p><strong>Du bon coca en bouteille de 1945</strong><br><img src="img/coca.jpg" class="img-thumbnail"/></p>
+                            <p><strong id="prixTotal"><u>Prix total : 30000 dollars</u></strong><button class="btn btn-primary btn-lg" onclick="goToKitchenCam()" >Commander !</button></p>
+                        </div>
+                        <div id="lstChecks" class="hide">
+                            <p><label><input type="checkbox" value="0" /> Order Placed</label></p>
+                            <p><label><input type="checkbox" value="0" /> Preparation</label></p>
+                            <p><label><input type="checkbox" value="0" /> Bake</label></p>
+                            <p><label><input type="checkbox" value="0" class="qc"/> Quality Control</label></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VROOM VROOM WINDOW-->
+        <div id="vroomVroomWindow" class="fullscreen hide">
+            <div class="container">
+                <div class="row">
+                   
+                </div>
+            </div>
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

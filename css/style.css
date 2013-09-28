@@ -1,0 +1,80 @@
+body {
+	background: url(../img/bg.jpg);
+}
+.container {
+	padding: 20px;
+	opacity: 0.95;
+}
+.fullscreen {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.center {
+	text-align: center;
+}
+
+#orderWindow p {
+	margin-top: 10px;
+	text-shadow: 0px 1px 1px #fff;
+}
+#orderWindow p img {
+	width: 200px;
+}
+#orderConfirmation, #kitchenWindow, #lstChecks {
+	margin-top: 20px;
+	padding: 15px;
+	background: #eee;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0px 2px 20px 5px #111
+}
+#orderWindow button {
+	margin: 10px;
+	font-size: 1.8em;
+}
+#orderWindow strong {
+	margin: 20px 20px 0px 0px;
+	font-size: 1.3em;
+}
+video {
+	width: 100%;
+}
+#prixTotal {
+	margin-right: 15px;
+}
+#lstChecks label {
+	font-size: 2.2em;
+	padding: 22px;
+	background: #f33;
+	border-radius: 16px;
+	cursor: pointer;
+	width: 80%;
+}
+#lstChecks label:hover {
+	opacity: 0.6;
+}
+
+#lstChecks label.checked {
+	background: #5a5!important;
+}
+input[type=checkbox] {
+	visibility: hidden;
+}
+#orderWindow h1 {
+	margin-top: 10px;
+}
+
+#logo {
+	position: absolute;
+	bottom: 2px;
+	left: 15px;
+	font-size: 2.5em;
+	color: #000;
+	text-shadow: 2px 2px 1px #fff;
+	vertical-align: top;
+}
+#logo:before {
+	content: url(../img/logo.png);
+	padding-right: 10px;
+}
