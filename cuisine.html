@@ -28,7 +28,7 @@
         <![endif]-->
 
         <!-- WAITING ORDER WINDOW-->
-        <div id="waitingOrderWindow" class="fullscreen hide">
+        <div id="waitingOrderWindow" class="fullscreen">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 center">
@@ -39,7 +39,7 @@
         </div>
 
         <!-- FAKE ORDER WINDOW-->
-        <div id="orderWindow" class="fullscreen">
+        <div id="orderWindow" class="fullscreen hide">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6" style="height:100%;">
@@ -49,16 +49,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 center">
-                        <div id="orderConfirmation">
-                            <h1>Order Confirmation</h1>
-                            <p><strong><span class="glyphicon glyphicon-cutlery"></span> Pizza avec des gros champignons</strong><br>
-                            <img src="img/pizza1.jpg" class="img-thumbnail"/></p>
-                            <p><strong><span class="glyphicon glyphicon-cutlery"></span> Pizza avec des cheeseburgers dans la pate</strong><br><small><i>100% pur gras</i></small><br>
-                            <img src="img/pizza2.jpg" class="img-thumbnail"/></p>
-                            <p><strong><span class="glyphicon glyphicon-cutlery"></span> Du bon coca en bouteille de 1945</strong><br><img src="img/coca.jpg" class="img-thumbnail"/></p>
-                            <p><strong id="prixTotal"><u>Prix total : 30,000.00 $</u></strong><button class="btn btn-primary btn-lg" onclick="goToKitchenCam()" >Commander !</button></p>
-                        </div>
-                        <div id="lstChecks" class="hide">
+                        <div id="lstChecks">
                             <p><label><input type="checkbox" value="0" /> Order Placed</label></p>
                             <p><label><input type="checkbox" value="0" /> Preparation</label></p>
                             <p><label><input type="checkbox" value="0" /> Bake</label></p>
