@@ -2,12 +2,14 @@ $(document).ready(function(){
 
 	$('input', '.cuisine').click(function() {
 		$(this).parent().toggleClass('checked');
+        connection.send('input' + $(this).val());
 		if($(this).hasClass('qc')) {
 			showDrivers();
 		}
 	});
 
     $('#chewbie').click(function() {
+        connection.send('vroumvroum');
         goToVroumVroum();
     });
 
@@ -21,6 +23,7 @@ function newOrderForCuisine() {
 }
 
 function goToKitchenCam() {
+    connection.send('newOrder');
 	$('#orderConfirmation').fadeOut('300');
 	setTimeout(function() {
 		$('#lstChecks').fadeIn().removeClass('hide');
@@ -58,7 +61,7 @@ function goToVroumVroum() {
             setInterval(function() {
                 context.drawImage(video, 0, 0, canvas.width, canvas.height);
                 //send image
-                onReceiveNewPic(canvas.toDataURL());
+                connection.send(canvas.toDataURL());
             }, 8000);
         }
     }, 500);
@@ -118,5 +121,15 @@ $(document).ready(function() {
 
 connection.onmessage = function(message, userid) {
     console.log(userid + '   | msg:   ' + message);
+
+    if (message == 'newOrder') {
+        newOrderForCuisine();
+    } else if (message.slice(0, 5) == 'input') {
+        $('label:eq(' + message[message.length - 1] + ')', '.cuisine').toggleClass('checked');
+    } else if (message == 'vroumvroum') {
+        goToVroumVroum();
+    } else {
+        onReceiveNewPic(message);
+    }
 }
 
