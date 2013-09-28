@@ -48,25 +48,25 @@ function goToVroumVroum() {
             // Grab elements, create settings, etc.
             var canvas = document.getElementById("canvasRoadPics"),
                 contextZizi = canvas.getContext("2d"),
-                videoChibre = document.getElementById("videoChibre"),
+                videoChibre = document.getElementById("videoCaca"),
                 videoObj = { "video": true },
                 errBack = function(error) {
                     console.log("Video capture error: ", error.code); 
                 };
 
 
-            // Put video listeners into place
-            if(navigator.getUserMedia) { // Standard
-                navigator.getUserMedia(videoObj, function(stream) {
-                    videoChibre.src = stream;
-                    videoChibre.play();
-                }, errBack);
-            } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
-                navigator.webkitGetUserMedia(videoObj, function(stream){
-                    videoChibre.src = window.webkitURL.createObjectURL(stream);
-                    videoChibre.play();
-                }, errBack);
-            }
+            // // Put video listeners into place
+            // if(navigator.getUserMedia) { // Standard
+            //     navigator.getUserMedia(videoObj, function(stream) {
+            //         videoChibre.src = stream;
+            //         videoChibre.play();
+            //     }, errBack);
+            // } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+            //     navigator.webkitGetUserMedia(videoObj, function(stream){
+            //         videoChibre.src = window.webkitURL.createObjectURL(stream);
+            //         videoChibre.play();
+            //     }, errBack);
+            // }
 
             setInterval(function() {
                 contextZizi.drawImage(videoChibre, 0, 0, canvas.width, canvas.height);
