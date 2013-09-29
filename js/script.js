@@ -200,7 +200,7 @@ function callObama() {
 
 
     //var peer = new PeerConnection('ws://websocket-signaling.jit.su:80');
-    var peer = new PeerConnection('ws://192.168.1.130:1338');
+    var peer = new PeerConnection('ws://192.168.1.221:1338');
     peer.onUserFound = function(userid) {
         console.log('peerFound');
         peer.sendParticipationRequest(userid);
@@ -209,6 +209,7 @@ function callObama() {
     peer.onStreamAdded = function(e) {
         console.log('stream Added');
         if (e.type == 'local') {
+            /*
             console.log('stream Added');
             if (currentLocal < 1) {
                 console.log('local stream');
@@ -219,6 +220,7 @@ function callObama() {
                 videosContainer.insertBefore(video, videosContainer.firstChild);
                 video.play();
             } 
+            */
         } else {
             if (currentRemote < 1) {
                 console.log('remote stream');
