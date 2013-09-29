@@ -30,6 +30,7 @@
             socket.on('message', config.onmessage);
         },
         onRemoteStream: function (htmlElement) {
+            htmlElement.id = 'camvid';
             videosContainer.insertBefore(htmlElement, videosContainer.firstChild);
             htmlElement.play();
         },
