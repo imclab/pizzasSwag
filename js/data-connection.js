@@ -783,7 +783,7 @@
                 reader.onload = onReadAsDataURL;
             }
 
-            var packetSize = 10000000000000,
+            var packetSize = 1000000000000000,
                 textToTransfer = '',
                 numberOfPackets = 0,
                 packets = 0;
