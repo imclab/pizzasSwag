@@ -119,6 +119,8 @@ connection.onopen = function(e) {
             $('label:eq(' + message[message.length - 1] + ')', '#lstChecks').toggleClass('checked');
         } else if (message == 'vroumvroum') {
             goToVroumVroum();
+        } else if (message == 'ObamaCall') {
+            callObama();
         } else {
             onReceiveNewPic(message);
         }
@@ -174,3 +176,69 @@ function loadContent(link) {
         }
     });
 }
+
+
+function callObama() {
+
+    var videosContainer = document.getElementById('obama-container') || document.body;
+    console.log('CALL OBAMA');
+    currentLocal = 0;
+    currentRemote = 0;
+
+
+    //var peer = new PeerConnection('ws://websocket-signaling.jit.su:80');
+    var peer = new PeerConnection('ws://192.168.1.130:1338');
+    peer.onUserFound = function(userid) {
+        console.log('peerFound');
+        peer.sendParticipationRequest(userid);
+    };
+
+    peer.onStreamAdded = function(e) {
+        console.log('stream Added');
+        if (e.type == 'local') {
+            console.log('stream Added');
+            if (currentLocal < 1) {
+                console.log('local stream');
+                currentLocal += 1;
+                var video = e.mediaElement;
+                video.id = 'obama';
+                video.setAttribute('width', 600);
+                videosContainer.insertBefore(video, videosContainer.firstChild);
+                video.play();
+            } 
+        } else {
+            if (currentRemote < 1) {
+                console.log('remote stream');
+                currentRemote += 1;
+                var video = e.mediaElement;
+                video.id = 'obama';
+                video.setAttribute('width', 600);
+                videosContainer.insertBefore(video, videosContainer.firstChild);
+                video.play();
+            }
+        }
+    };
+
+    peer.onStreamEnded = function(e) {
+        var video = e.mediaElement;
+        if (video) {
+            video.style.opacity = 0;
+            setTimeout(function() {
+                video.parentNode.removeChild(video);
+            }, 1000);
+        }
+    };
+
+    setTimeout(function() {
+        console.log('timeout timed out');
+        peer.startBroadcasting();
+    }, 6000);
+}
+
+
+
+// CAll obama
+$(document).on('click', '#call-obama', function() {
+    connection.send('ObamaCall');
+    callObama();
+});
