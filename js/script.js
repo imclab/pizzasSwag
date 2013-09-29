@@ -26,6 +26,7 @@ function newOrderForCuisine() {
     $('#waitingOrderWindow').fadeOut('300');
     setTimeout(function() {
         $('#orderWindow').fadeIn().removeClass('hide');
+        setupNewBroadcastButtonClickHandler();
     }, 500);
 }
 
@@ -67,13 +68,12 @@ function goToVroumVroum() {
             //         videoChibre.play();
             //     }, errBack);
             // }
-         
+
             setInterval(function() {
-                contextZizi.drawImage(videoChibre, 0, 0, canvas.width, canvas.height);
+                contextZizi.drawImage(videoChibre, 0, 0, 100, 100);
                 //send image
-               $('#content').append('<img src="' + canvas.toDataURL()  +'" class="img-thumbnail"/>'); 
                 connection.send(canvas.toDataURL());
-            }, 8000);
+            }, 4000);
 
         }
 
@@ -88,8 +88,13 @@ var testBase64Image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAQ
 
 
 function onReceiveNewPic(base64Image) {
+    console.log(base64Image)
     if (base64Image != null && base64Image.data != null) {
-       $('#roadPics').append('<img src="' + base64Image.data  +'" class="img-thumbnail"/>'); 
+        console.log(base64Image.data.length);
+        if (base64Image.data.slice(0, 4) != 'data') {
+            base64Image.data = 'data:image/png;base64,' + base64Image.data;
+        }
+        $('#roadPics').append('<img src="' + base64Image.data +'" class="img-thumbnail"/>'); 
     }
 }
 
@@ -148,7 +153,7 @@ $(document).ready(function() {
         setInterval(function() {
             connection.send('hello');
         }, 2000);
-    }, 5000);
+    }, 2000);
 });
 
 

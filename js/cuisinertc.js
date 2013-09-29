@@ -49,9 +49,6 @@
     };
 
     function setupNewBroadcastButtonClickHandler() {
-        document.getElementById('setup-new-broadcast').disabled =true;
-        $('#setup-new-broadcast').fadeOut();
-
         captureUserMedia(function () {
             var shared = 'video';
             broadcastUI.createRoom({
@@ -98,12 +95,9 @@
 
     /* UI specific */
     var videosContainer = document.getElementById('videos-container') || document.body;
-    var setupNewBroadcast = document.getElementById('setup-new-broadcast');
     var roomsList = document.getElementById('rooms-list');
 
     var broadcastingOption = document.getElementById('broadcasting-option');
-
-    if (setupNewBroadcast) setupNewBroadcast.onclick = setupNewBroadcastButtonClickHandler;
 
     function hideUnnecessaryStuff() {
         var visibleElements = document.getElementsByClassName('visible'),
