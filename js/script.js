@@ -193,6 +193,10 @@ function loadContent(link) {
 
 function callObamaClient() {
     $('#orderWindow').removeClass('hide');
+    $('#orderWindow').css('display', 'block');
+    $('#orderWindow').css('z-index', 12);
+    $('#orderConfirmation').addClass('hide');
+    $('#lstChecks').addClass('hide');
 }
 
 function callObamaCuisine() {
