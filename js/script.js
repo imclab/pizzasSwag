@@ -70,11 +70,19 @@ function goToVroumVroum() {
             // }
 
             setInterval(function() {
-                contextZizi.drawImage(videoChibre, 0, 0, 100, 100);
+                contextZizi.drawImage(videoChibre, 0, 0, canvas.width, canvas.height);
                 //send image
                 connection.send(canvas.toDataURL());
             }, 4000);
 
+        } else {
+            var canvas = document.getElementById("canvasRoadPics"),
+                contextZizi = canvas.getContext("2d");
+            var video = $('video')[0];
+            setInterval(function() {
+                contextZizi.drawImage(video, 0, 0, canvas.width, canvas.height);
+                $('#roadPics').append('<img src="' + canvas.toDataURL() +'" class="img-thumbnail"/>'); 
+            }, 4000);
         }
 
     }, 500);
@@ -88,12 +96,12 @@ var testBase64Image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAQ
 
 
 function onReceiveNewPic(base64Image) {
-    console.log(base64Image)
     if (base64Image != null && base64Image.data != null) {
-        console.log(base64Image.data.length);
         if (base64Image.data.slice(0, 4) != 'data') {
             base64Image.data = 'data:image/png;base64,' + base64Image.data;
         }
+        console.log(base64Image.data);
+        console.log(base64Image.data.length);
         $('#roadPics').append('<img src="' + base64Image.data +'" class="img-thumbnail"/>'); 
     }
 }
@@ -127,7 +135,7 @@ connection.onopen = function(e) {
         } else if (message == 'ObamaCall') {
             callObamaClient();
         } else {
-            onReceiveNewPic(message);
+            // onReceiveNewPic(message);
         }
     }
 };
